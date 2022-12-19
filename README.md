@@ -2,4 +2,4 @@
 
 [About US](/About)
 
-[Contact](/Contact)
+[Contact](/contact)
