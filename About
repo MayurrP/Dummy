@@ -1,1 +1,106 @@
 About
+
+package com.code;
+
+public class BST {
+	Node root;
+	int count;
+
+	public BST() {
+		super();
+		root = null;
+	}
+	
+	//----------> Insert element at tree
+	
+	public boolean insertData(int data) {
+		Node newNode = new Node(data);
+		if(root == null) {
+			root = newNode;
+			return true;
+		}
+		
+		Node temp = root;
+		
+		while (true) {
+			if(data == temp.getData())
+				return false;
+			
+			
+			if(data < temp.getData()) {
+				if(temp.getLeft() == null) {
+					temp.setLeft(newNode);
+					return true;
+				}
+				temp = temp.getLeft();
+			}
+			else {
+				if(temp.getRight() == null) {
+					temp.setRight(newNode);
+					return true;
+				}
+				temp = temp.getRight();
+			}
+		}
+	}
+	
+//---------> Recursive Functions.
+	
+	//----> preorder 
+	
+	public void preorder(Node root) {
+		if(root == null)
+			return;
+		else {
+			System.out.print("   "+root.getData());
+			preorder(root.getLeft());
+			preorder(root.getRight());
+		}
+	} 
+	
+	//------->
+	
+	public void inorder(Node root) {
+		if(root == null) {
+			return;
+		}
+		else {
+			inorder(root.getLeft());
+			System.out.print("   "+root.getData());
+			inorder(root.getRight());
+		}
+	}
+	
+	public void postorder(Node root) {
+		if(root == null) {
+			return;
+		}
+		else {
+			postorder(root.getLeft());
+			postorder(root.getRight());
+			System.out.print("   "+root.getData());
+		}
+	}
+	
+	
+	public void max(Node root) {
+		if(root.getRight() == null) {
+			
+			System.out.println(root.getData()+" ");
+			return ;
+		}
+			
+			max(root.getRight());
+		}
+	
+	public int max1(Node root) {
+		if(root.getRight() == null) 
+			return root.getData();
+		return max1(root.getRight());
+	}
+	public Node getRoot() {
+		return root;
+	}		
+	
+	
+}
