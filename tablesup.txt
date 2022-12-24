@@ -12,10 +12,9 @@ ManagerId int,
 PanNo int not null, 
 BasicSal decimal(10,2),
 constraint fk_di foreign key(DeptId) references Department(DeptId),
-constraint fk_eid foreign key(EmpId) references EmpAddress(EmpId),
-constraint fk_eid foreign key(email) references users(email),
 constraint fk_eid foreign key(EmpId) references Salary(EmpId),
-constraint fk_eid foreign key(EmpId) references InputSheet(EmpId)
+constraint fk_ema foreign key(email) references users(email),
+constraint fk_ei foreign key(EmpId) references InputSheet(EmpId)
 );
 
 create table EmpAddress(
@@ -24,7 +23,8 @@ Address varchar(50),
 City varchar(40),
 Pincode int  not null,
 State varchar(40) not null default "Maharashtra",
-Country varchar(40) not null default "India");
+Country varchar(40) not null default "India"
+);
 
 
 Department table --->> Primary table
@@ -71,7 +71,7 @@ MA decimal(9,2),
 TAX decimal(9,2),
 TotalDays decimal(9,2),
 TotalSal decimal(10,2),
-NetSal decimal(9,2),
+NetSal decimal(10,2)
 );
 
 
@@ -81,6 +81,6 @@ Empid int Primary Key,
 date Date,
 markin_time time,
 markOut_time time,
-total_hour int,
+total_hour int
 );
 
