@@ -14,7 +14,8 @@ constraint fk_di foreign key(DeptId) references Department(DeptId),
 constraint fk_eid foreign key(EmpId) references Salary(EmpId),
 constraint fk_ema foreign key(email) references users(email),
 constraint fk_ei foreign key(EmpId) references InputSheet(EmpId),
-constraint fk_eiq foreign key(EmpId) references query(Emp_id)
+constraint fk_eiq foreign key(EmpId) references query(Emp_id),
+constraint fk_eiad foreign key(EmpId) references EmpAddress(EmpId)
 );
 
 create table EmpAddress(
