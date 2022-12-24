@@ -118,3 +118,19 @@ markOut_time time,
 total_hour int
 );
 
+
+
+insert into EmployeeRecord values(101,"Jacob",8956237415,"jacob@1Xbet.com","Analyst","1",12-10-2015,"Emp99",25000);
+
+insert into EmployeeRecord values(102,"Mark",9378956415,"mark@1Xbet.com","Bussiness Analyst","2",12-05-2015,"Emp95",27000);
+
+insert into EmployeeRecord values(103,"Andrew",9954162375,"Andrew@1Xbet.com","Analyst","2",12-01-2016,"Emp94",25000);
+
+insert into EmployeeRecord values(104,"David",7415895623,"david@1Xbet.com","Manager","1",12-10-2015,"Emp93",28000);
+
+insert into EmployeeRecord values(105,"John",9574158623,"john@1Xbet.com","Manager","2",12-10-2015,"Emp93",28000);
+
+
+
+
+
