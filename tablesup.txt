@@ -72,11 +72,22 @@ constraint pk_ss primary key(DeptId,Designation),
 constraint fk_dg foreign key(DeptId) references Department(DeptId)
 );
 
+insert into SalStracture values(1,"Employee",10000);
+insert into SalStracture values(2,"Manger",40000);
+insert into SalStracture values(1,"Manger",30000);
+insert into SalStracture values(3,"Employee",8000);
+
 
 create Table users(
 email varchar(60) primary key,
 Password varchar(30)
 );
+
+insert into users values("abc@123.com","abc123");
+insert into users values("xyz@123.com","xyz123");
+insert into users values("abc@456.com","abc456");
+insert into users values("abc@123.com","abc123");
+insert into users values("uvw@789.com","uvw789");
 
 
 create table Salary(
@@ -96,6 +107,10 @@ TotalSal decimal(10,2),
 NetSal decimal(10,2)
 );
 
+insert into Salary values(101,"Employee",10000,"IT","01-03-2022","31-03-2022",2000,1000,1500,3000,2300,25,50000,60000);
+insert into Salary values(102,"Manger",20000,"Accounting","01-04-2022","30-04-2022",2000,1000,1500,3000,2300,25,50000,60000);
+insert into Salary values(103,"Employee",10000,"Accounting","01-03-2022","31-03-2022",2000,1000,1500,3000,2300,25,50000,60000);
+insert into Salary values(104,"Manger",10000,"finances","01-03-2022","31-03-2022",2000,1000,1500,3000,2300,25,50000,60000);
 
 
 create table InputSheet(
@@ -106,6 +121,13 @@ markOut_time time,
 total_hour int
 );
 
+insert into InputSheet values(101,"01-03-2022","08:30","05:30",9);
+insert into InputSheet values(102,"02-03-2022","08:30","04:30",8);
+insert into InputSheet values(103,"05-03-2022","08:30","01:30",5);
+insert into InputSheet values(104,"06-03-2022","08:30","05:30",9);
+insert into InputSheet values(105,"10-03-2022","08:30","05:30",9);
+
+
 create table query(
 Emp_id int,
 Sub_id int,
@@ -114,6 +136,14 @@ status boolean,
 comment varchar(225),
 constraint pk_ss primary key(Emp_id,Sub_id)
 );
+
+insert into query values(101,1,"salary","True","Not recived salary");
+insert into query values(102,2,"leave","True","want leave for personal reason");
+insert into query values(103,3,"Edit profile","True","Want to edit profile");
+insert into query values(104,1,"salary","True","Not recived salary");
+insert into query values(105,2,"leave","True","Want leave");
+
+
 
 
 
