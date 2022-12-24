@@ -74,6 +74,15 @@ TotalSal decimal(10,2),
 NetSal decimal(10,2)
 );
 
+
+create table InputSheet(
+Empid int Primary Key,
+date Date,
+markin_time time,
+markOut_time time,
+total_hour int
+);
+
 query:-
 
 create table query(
