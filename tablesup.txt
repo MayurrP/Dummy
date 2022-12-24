@@ -74,6 +74,36 @@ TotalSal decimal(10,2),
 NetSal decimal(10,2)
 );
 
+query:-
+
+create table query(
+Emp_id int primary key,
+Sub_id int primary key ,
+subject varchar(255),
+status varchar(50),
+)
+
+create table payment_query(
+Emp_id int primary key,
+PerDaySal double(20,2),
+comment varchar(255),
+)
+
+create table profile_query(
+EmpId int primary key,
+EmpName varchar(40) ,
+MobileNo double(12,2) ,
+email varchar(60) ,
+DeptId int ,
+HireDate Date,
+ManagerId int,
+PanNo int , 
+BasicSal decimal(10,2),
+comment varchar(255),
+constraint fk_eid foreign key(Emp_id) references query((Emp_id),
+)
+
+
 
 
 create table InputSheet(
