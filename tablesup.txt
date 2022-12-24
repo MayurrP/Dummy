@@ -88,14 +88,9 @@ query:-
 create table query(
 Emp_id int primary key,
 Sub_id int primary key ,
-subject varchar(255),
-status varchar(50),
-)
-
-create table payment_query(
-Emp_id int primary key,
-PerDaySal double(20,2),
-comment varchar(255),
+subject varchar(50),
+status boolean,
+comment varchar(225)
 )
 
 create table profile_query(
