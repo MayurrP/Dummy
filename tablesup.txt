@@ -131,6 +131,18 @@ insert into EmployeeRecord values(104,"David",7415895623,"david@1Xbet.com","Mana
 insert into EmployeeRecord values(105,"John",9574158623,"john@1Xbet.com","Manager","2",12-10-2015,"Emp93",28000);
 
 
+insert into EmpAddress values(101, "Ravet", "Pune", 442501, "Maharashtra", "India");
+
+insert into EmpAddress values(102, "Ravet", "Pune", 442501, "Maharashtra", "India");
+
+insert into EmpAddress values(103, "baner", "Pune", 442503, "Maharashtra", "India");
+
+insert into EmpAddress values(104, "Ravet", "Pune", 442501, "Maharashtra", "India");
+
+insert into EmpAddress values(105, "Akurdi", "Pune", 442502, "Maharashtra", "India");
+
+
+
 
 
 
