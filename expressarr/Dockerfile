@@ -4,4 +4,4 @@ COPY package.json /app
 RUN npm install
 COPY . /app
 EXPOSE 8001
-CMD ["node", "src/exparr.js"]
+CMD ["node", "exparr.js"]

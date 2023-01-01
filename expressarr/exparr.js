@@ -18,7 +18,7 @@ app.get("/empdata",function(req,resp){
         var ob = {id,name,desg};
         memparr.insertEmp(ob);
         console.log(memparr.getlength());
-        resp.send("<h2>Menber Added Successfully.</h2>")
+        resp.send("<h2>Member Added Successfully.</h2>")
     }
     else{
         var id = req.query.id;
