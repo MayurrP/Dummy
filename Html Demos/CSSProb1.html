@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 ProblemStmt 2</title>
+    <style>
+        div{
+             background-color: black;
+             width: 550px;
+             color: aliceblue;
+             margin: 30px;
+             padding: 10px;
+        }
+        fieldset{
+            border-color: blue;
+            border-radius: 10px;
+            border-width: 3px;
+        }
+        button{
+            background-color: blue;
+            color: aliceblue;
+        }
+       .r1{
+        text-align: right;
+        }
+        input{
+            background-color: black;
+        }
+        legend{
+            background-color: blue;
+        }
+        #btn{
+            margin-top: 23px;
+            margin-left: 100px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+ <div>
+    <form>
+    <fieldset>
+        <legend>Name and address</legend>
+        
+            <table cellspacing = "3px" cellpadding = "10px" align="left">
+                <tr>
+                    <td class="r1"><label for="ssn">SSN : </label></td>
+                    <td><input type="text" name="ssn" id="ssn"  required autofocus>
+                        <label style="background-color: blue;">Fill in name and Address</label></td>
+                </tr>
+                <tr>
+                    <td class="r1"><label for="name">Full Name : </label></td>
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <td class="r1"><label for="san">Street and number : </label></td>
+                    <td><input type="text" name="san" id="san"  required autofocus></td>
+                </tr>
+                <tr>
+                    <td class="r1"><label for="pcode">Postal code : </label></td>
+                    <td><input type="text" name="pcode" id="pcode"></td>
+                </tr>
+                <tr>
+                    <td class="r1"><label for="city">City : </label></td>
+                    <td><input type="text" name="city" id="city"  required autofocus></td>
+                </tr>
+            </table>
+    </fieldset>
+    <fieldset style="width: 350px; margin-top: 10px;">
+        <legend>Username and password</legend>
+            <table cellspacing = "3px" cellpadding = "10px" align="rignt">
+                <tr>
+                    <td class="r1"><label for="umane">Username : </label></td>
+                    <td><input type="text" name="umane" id="umane"></td>
+                </tr>
+                <tr>
+                    <td class="r1"><label for="pass">Password : </label></td>
+                    <td><input type="text" name="pass" id="pass"  required autofocus></td>
+                </tr>                 
+            </table>
+        
+    </fieldset>
+    <button type="button" id="btn" name="btn">Register</button>
+
+</form>
+</div>
+</body>
+</html>

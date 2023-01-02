@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Statement - 5</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            background: hwb(350 75% 0%);
+        }
+        input{
+            border-style:ridge;
+        }
+    </style>
+          
+</head>
+<body>
+    <form>
+        <table border="3px" align="center"> 
+            <tr>
+                <td><label for="nm">Name</label></td>
+                <td><input type="text" name="nm" id="nm" required autofocus></td>
+            </tr>
+            <tr>
+                <td><label for="ecode">Employee Code</label></td>
+                <td><input type="number" name="ecode" id="ecode" required></td>
+            </tr>
+            <tr>
+                <td><label>Department</label></td>
+                    <td>
+                        <input type="radio" name="dept" id="admin">
+                        <label for="admin">ADMIN</label><br>
+                        <input type="radio" name="dept" id="hr">
+                        <label for="hr">HR</label><br>
+                        <input type="radio" name="dept" id="technical">
+                        <label for="technical">TECHNICAL</label><br>
+                        <input type="radio" name="dept" id="accounts">
+                        <label for="accounts">ACCOUNTS</label><br>
+                    </td>
+            </tr>
+            <tr>
+                <td><label>Date of Joining</label></td>
+                <td>
+                <table>
+                    <tr>
+                        <td><input type="number" name="dd" id="dd" required min="1" max="31"></td>
+                        <td>/</td>
+                        <td><input type="number" name="mm" id="mm" required min="1" max="12"></td>
+                        <td>/</td>
+                        <td><input type="number" name="yyyy" id="yyyy" required min="0" max="9999"> </td>
+                    </tr>
+                    <tr>
+                        <td><label for="dd">dd</label></td>
+                        <td></td>
+                        <td><label for="mm">mm</label></td>
+                        <td></td>
+                        <td><label for="yyyy">yyyy</label></td>
+                    </tr>
+                </table>
+              </td>                
+            </tr>
+            <tr>
+                <td><label for="addr">Address</label></td>
+                <td>
+                    <textarea rows="4" cols="50"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Training Program Attended</label></td>
+                    <td>
+                        <input type="checkbox" name="tpa" id="html">
+                        <label for="html">HTML/DHTML</label><br>
+                        <input type="checkbox" name="tpa" id="java">
+                        <label for="java">JAVA</label><br>
+                        <input type="checkbox" name="tpa" id="cs">
+                        <label for="cs">CLIENT/SERVER</label><br>
+                        <input type="checkbox" name="tpa" id="net">
+                        <label for="net">.NET</label><br>
+                    </td>
+            </tr>
+            <tr>
+                <td><label for="nm">Training Programmes need to attend</label></td>
+                <td>
+                    <select size="2">
+                        <option>JAVASCRIPT</option>
+                        <option>JSTRUCTS</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="nm">Send the information at</label></td>
+                <td><a href="mailto:empinfo@patni.com">empinfo@patni.com</a></td>
+            </tr>
+        </table>
+    </form> 
+</body>
+</html>

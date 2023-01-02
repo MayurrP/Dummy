@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        li {
+        display: inline;
+        color: white;
+        margin-right: 5%;
+        }
+        ul {
+        background-color: #5bb8a2;
+        }
+        table tr th{
+            color: white;
+            background-color: #5bb8a2;
+            border-color: black;
+        }
+        fieldset{
+            border-radius: 15px;
+            width: 300px;
+        }  
+        #mydiv{
+            color: white;
+            background-color: #5bb8a2;
+            margin: 10px;
+        }
+    
+        .fcontainer{
+            display:flex;
+            flex-direction: row;
+            margin: 10px;
+        }
+        .fchild{
+            margin-left: 15px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/header.jpg" style="width:100%;">
+    </div>
+    <nav><ul>
+        <li>Home Page</li>
+        <li>Reservations</li>
+        <li>Facilities</li>
+        <li>Virtual Tour</li>
+        <li>Staff</li>
+        <li>Calender of Events</li>
+        <li>Contact Info</li>
+        <li>Directions</li>
+        <li>FAQ</li>
+      </ul></nav>
+      <div align="right">
+        Reservations for Conference Rooms<br>
+        Tuesday,April 11<br>
+      </div>
+      <div>
+        <table width="100%" border="1px" >
+            <tr></tr><th></th><th colspan="8">Morning</th><th colspan="2">Noon</th><th colspan="8">Afternoon</th></tr>
+            <tr><th>Room</th><th>8:00</th><th>8:30</th><th>9:00</th><th>9:30</th><th>10:00</th><th>10:30</th><th>11:00</th><th>11:30</th>
+            <th>12:00</th><th>12:30</th>
+            <th>1:00</th><th>1:30</th><th>2:00</th><th>2:30</th><th>3:00</th><th>3:30</th><th>4:00</th><th>4:30</th></tr>
+            <tr><td>Sunrise<br>Room</td><td colspan="4">Marriage Encounter</td><td colspan="4"></td><td colspan="2">Marriage<br>Encounter<br>Luncheon</td><td colspan="4"></td><td colspan="4">Marriage Encounter Talks</td></tr>
+            <tr><td>Mountain<br>View Room</td><td colspan="2">Breakfast Club<br>of Ohio</td><td colspan="4"></td><td colspan="4">Ohio Conference of Librarians</td><td colspan="2"></td><td colspan="6">Ohio Book Resale Setup</td></tr>
+            <tr><td>Arbor Hall</td><td colspan="8">Computer Expo Set Up</td><td colspan="2"></td><td colspan="8">Computer Expo Opening Session</td></tr>
+            <tr><td>Mitchell<br>Theater</td><td colspan="14"></td><td colspan="4">Youth Theater</td></tr>
+            <tr><td>Gold Room</td><td colspan="2"></td><td colspan="3">The Tompkins Group</td><td colspan="3">Pearson Planning</td><td colspan="4"></td><td colspan="3">Mothers of Multiples</td><td colspan="3">Teen Connections</td></tr>
+            <tr><td>Blue Room</td><td colspan="2"></td><td colspan="3">Retirement Planning</td><td colspan="3">The Senior Group</td><td colspan="2">Senior<br>Luncheon</td><td colspan="5">Senior Classes</td><td colspan="3">Tutoring</td></tr>
+            <tr><td>Green<br>Room</td><td colspan="2"></td><td colspan="4">Drivers'Ed</td><td colspan="5">Movie Club</td><td colspan="4"></td><td colspan="3">Tutoring</td></tr>
+
+        </table>
+      </div>
+      <section>
+      <div class="fcontainer">
+      <div class="fchild">
+        To reserve a room, please contact Y ancy Inwe at<br>
+        extension 388 or by email at<br>
+        <a href="mailto:yancyinwe@hconfcenter.org">yancyinwe@hconfcenter.org</a> Reservations should be<br>
+        made at least 48 hours in advance. Cancellations<br>
+        require 24 hours notice. Room deposits will not be<br>
+        returned for cancellations within 24 hours of the<br>
+        scheduled event.<br><br><br>
+      </div>
+      <div class="fchild" id="div2">
+        <fieldset style="border-color:pink">
+            <table align="left">
+                <tr><td>Sunrise Room</td><td>Maximun Capacity: 80</td></tr>
+                <tr><td>Mount View Room</td><td>Maximun Capacity: 150</td></tr>
+                <tr><td>Arbor Hall</td><td>Maximun Capacity: 190</td></tr>
+                <tr><td>Mitchell Theater</td><td>Maximun Capacity: 120</td></tr>
+                <tr><td>Gold Room</td><td>Maximun Capacity: 40</td></tr>
+                <tr><td>Blue Room</td><td>Maximun Capacity: 30</td></tr>
+                <tr><td>Green Room</td><td>Maximun Capacity: 55</td></tr>
+            </table>
+        </fieldset>
+      </div>
+    </div>
+    </section>
+<footer>
+    <div align="center" id="mydiv" >
+        Hamilton Conference Center •8711 West Park Lane • Hamilton, OH 45011 •(513) 555 - 7911 
+    </div>
+</footer>
+</body>
+</html>

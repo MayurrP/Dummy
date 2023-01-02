@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 ProblemStmt 2</title>
+    <style>
+        div{
+             background-color: #356AA0;
+             width: 550px;
+             color: aliceblue;
+             margin: 30px;
+             padding: 40px;
+        }
+        fieldset{
+            border-color: aliceblue;
+        }
+       .r1{
+        text-align: right;
+        }
+    </style>
+</head>
+<body>
+ <div>
+    <fieldset>
+        <legend>Registration Details</legend>
+        <form>
+            <table cellspacing = "3px" cellpadding = "10px" align="right">
+                <tr>
+                    <td class="r1"><label for="uni">University : </label></td>
+                    <td><input type="text" name="uni" id="uni"  required autofocus></td>
+                </tr>
+                <tr>
+                    <td class="r1"><label for="institute">Institute : </label></td>
+                    <td><input type="text" name="institute" id="institute"></td>
+                </tr>
+                <tr>
+                    <td class="r1"><label for="branch">Branch : </label></td>
+                    <td>
+                        <select name="branch"  id="branch">
+                            <option value="1">-------Select--------</option>
+                            <option value="cs">CS</option>
+                            <option value="it">IT</option>
+                            <option value="civil">Civil</option>
+                            <option value="extc">EXTC</option>
+                            <option value="electrical">Electrical</option>
+                            <option value="mechanical">Mechanical</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="r1"><label for="degree">Degree : </label></td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                <select name="degree"  id="degree">
+                                    <option value="1">--Select--</option>
+                                    <option value="btech">B.Tech</option>
+                                    <option value="mca">MCA</option>
+                                    <option value="msc">MSC</option>
+                                    <option value="bcca">BCCA</option>
+                                </select>
+                                </td>
+                                <td>
+                                    <input type="radio" name="status" id="pursuing">
+                                    <label>Pursuing</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="status" id="completed">
+                                    <label>Completed</label>
+                                </td>
+                            </tr>
+                    </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="r1"><label>Average CPI : </label></td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type="number" name="upto" id="upto" style="width: 40px">
+                                    <label for>Upto</label>
+                                </td>
+                                <td>
+                                    <input type="number" name="semester" id="semester" max="8" style="width: 40px">
+                                    <label>Th Semester</label>
+                                </td>
+                            </tr>
+                    </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="r1"><label for="experience">Experience : </label></td>
+                    <td><input type="number" name="experience" id="experiences"     style="width: 40px">Years</td>
+                </tr>
+                <tr>
+                    <td class="r1"><label for="web">Your Website or Blog : </label></td>
+                    <td><input type="text" name="web" id="web" placeholder="http://"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+ 
+</div>
+</body>
+</html>

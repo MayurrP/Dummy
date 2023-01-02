@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 5 ProblemStmt1</title>
+</head>
+<body>
+    <h1>Appointment Scheduler</h1>
+    <form>
+    <fieldset>  
+        <legend>Personal Information</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="nm">Name</label><br>
+                        <input type="text" name="nm" id="nm" required autofocus>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="tel">Telephone Number</label><br>
+                        <input type="number" name="tel" id="tel" required maxlength="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="emailadd">Email address</label><br>
+                        <input type="email" name="emailadd" id="emailadd" required">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="dob">Date of Birth</label><br>
+                        <input type="date" name="dob" id="dob">
+                    </td>
+                </tr>
+            </table>
+    </fieldset>
+
+    <fieldset>  
+        <legend>Appointment Request</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="reason">What is the reason for your visit?</label><br>
+                        <input type="text" name="reason" id="reason" required placeholder="select or  type your reason">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="painlevel">Current pain level</label><br>
+                        <input type="range" name="painlevel" id="painlevel">
+                    </td>   
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pdate">Preferred date</label><br>
+                        <input type="date" name="pdate" id="pdate">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="ptime">Preferred time</label><br>
+                        <input type="time" name="ptime" id="ptime">  
+                    </td>
+                </tr>   
+            </table>
+    </fieldset>
+    <button type="submit" name="submit" id="submit" value="Submit" onclick>Submit
+</form>
+</body>
+</html>
