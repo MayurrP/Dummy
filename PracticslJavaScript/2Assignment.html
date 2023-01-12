@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function display(){
+            var data = document.getElementById("txt").value;
+            var n = parseInt(document.getElementById("num1").value);
+
+            for (var i = 0; i < n; i++) {
+                document.getElementById("myid").innerHTML +=data+"<br>";                
+            }
+            document.getElementById("txt").value="";
+            document.getElementById("num1").value="";
+        }
+    </script>
+
+    <form>
+        <table align="center">
+            <tr> 
+                <td><label for="txt">Enter Text : </label></td>
+                <td><input type="text" id="txt" name="txt" required autofocus></td>
+            </tr>
+            <tr>
+                <td><label for="num1">No. of Copies : </label></td>
+                <td><input type="number" id="num1" name="num1" required></td>
+            </tr>
+            <tr align="center">
+                <td colspan="2"><button type="button" id="btn" name="btn" onclick="display()">Print Data</button></td>
+            </tr>
+            <tr align="center">
+                <td colspan="2"><p id="myid" ></p></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

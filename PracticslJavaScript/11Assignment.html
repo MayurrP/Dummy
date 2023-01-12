@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showdate(){
+            weekarr=['Sun','Mon','Tues','Wed','Thurs','Fri','Sat'];
+            var dt=new Date();
+            alert(weekarr[dt.getDay()]);
+            var d=document.getElementsByTagName("div");
+            d[0].innerHTML=`Today is ${weekarr[dt.getDay()]}`;
+        }
+    </script>
+</head>
+<body onload="showdate()">
+    <div>
+
+    </div>
+    
+</body>
+</html>

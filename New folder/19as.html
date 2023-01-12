@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calDigitSum() {
+            var rem = 0, sum = 0;
+            var num = parseInt(document.getElementById("num").value);
+            var num1=num;
+            if (num < 1 || num > 1000) {
+                document.getElementById("mydiv").innerHTML = "Entered number is out of range."
+            }
+            else {
+                while (num != 0) {
+                    rem = num % 10;
+                    sum = sum + rem;
+                    num = parseInt(num / 10);
+                }
+                document.getElementById("mydiv").innerHTML = "Sum of digits of "+num1+" is "+sum;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    Enter a positive integer less than 1000 :
+    <input type="number" name="num" id="num">
+    <button type="button" id="btn" name="btn" onclick="calDigitSum()">Cal Digit Sum</button>
+    <div id="mydiv"></div>
+</body>
+
+</html>

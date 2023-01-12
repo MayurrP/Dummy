@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function reverseWords() {
+            var namesarray = ["messi", "pritish", "mayur", "ram", "mohit", "abhishek"];
+            var str = null;
+            for (var i = 0; i < namesarray.length; i++) {
+                var temp = namesarray[i];
+                str = "";
+                for (var j = temp.length - 1; j >= 0; j--) {
+                    str += temp[j];
+                }
+                console.log(str);
+                namesarray[i] = str;
+            }
+            namesarray.sort();
+            document.getElementById("mydiv").innerHTML = namesarray;
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" name="btn1" id="btn1" onclick="reverseWords()">Reverse words</button>
+    <div id="mydiv">
+
+    </div>
+</body>
+
+</html>

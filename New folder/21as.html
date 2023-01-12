@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dispNames() {
+            var namearr = ["Pritish", "Mayur", "Aman", "Rakesh", "Tanishk"];
+            var str = "";
+            for (var ob of namearr) {
+                str += "<li>"+ob+"</li>";
+            }
+            document.getElementById("list").innerHTML = str;
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" id="btn" name="btn" onclick="dispNames()">Show</button>
+    <h3>Members of my group are</h3>
+    <ol id="list"></ol>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculate(event){
+            var num = parseInt(document.getElementById("num1").value)
+            var temp = 1;
+            var print="  "
+            while (temp !== num) {
+                if(temp % 2 == 0){
+                    print = print +temp+"<br>";
+                }
+                temp++;
+            }
+            document.getElementById("para").innerHTML=print;
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+    <table align="center">
+        <tr>
+            <td><label for="num1">Enter Number : </label></td>
+            <td><input type="number" id="num1" name="num1" autofocus required></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+               <button type="button" name="btn" id="btn" onclick="calculate(event)">Print Even Number</button>
+            </td>
+        </tr> 
+            <tr>
+            <td colspan="2" align="center">
+                Even Numbers Are :
+            <p id="para"></p>   
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

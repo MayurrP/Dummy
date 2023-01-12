@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var emparray = [{eid:1,ename:"Mayur",sal:60000.00},
+        {eid:2,ename:"Pritish",sal:80000.00},{eid:3,ename:"Ram",sal:70000.00},
+        {eid:4,ename:"Balram",sal:40000.00},{eid:5,ename:"Teju",sal:75000.00}];
+
+        function displayData(){
+            var str = "<table class='disptable'><tr><th>Employee Id</th><th>Employee Name</th><th>Salary</th></tr>";
+                for(var ob of emparray){
+                    str+="<tr><td>"+ ob.eid +"</td><td>"+ ob.ename +"</td><td>"+ ob.sal +"</td></tr>";
+                }
+            str+="</table>";
+            document.getElementById("mydiv").innerHTML = str;
+        }      
+    </script>
+    <style>
+        .disptable,th,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+            font-size: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" name="btn1" id="btn1" onclick="displayData()">Display Employee Data</button><br><br>
+    <div id="mydiv">
+
+    </div>
+</body>
+</html>

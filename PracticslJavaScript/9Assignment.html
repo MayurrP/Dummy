@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculate(){
+            var p = parseInt(document.getElementById("prin").value);
+            var n = parseInt(document.getElementById("period").value);
+            var r = parseInt(document.getElementById("roi").value);
+
+            ci = p *Math.pow(1+(r/100),n) - p;
+
+            document.getElementById("ci").value=ci;
+        }
+    </script>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td colspan="3">
+                <h3>***** Calculate Compound Interset *****</h3>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="prin">Principal</label></td>
+            <td>    -    </td>
+            <td><input type="number" id="prin" name="prin"></td>
+        </tr>
+        <tr>
+            <td><label for="roi">Rate of Interset</label></td>
+            <td>    -    </td>
+            <td><input type="number" id="roi" name="roi"></td>
+        </tr>
+        <tr>
+            <td><label for="period">Period</label></td>
+            <td>    -    </td>
+            <td><input type="number" id="period" name="period" onkeypress="calculate()"></td>
+        </tr>
+        
+        <tr>
+            <td><label for="ci">Compound Interest </label></td>
+            <td>    -    </td>
+            <td><input type="number" id="ci" name="ci"></td>
+        </tr>
+    </table>
+</body>
+</html>

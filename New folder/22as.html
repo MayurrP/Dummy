@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function searchWord() {
+            var i = 1;
+            var element = /training/i;
+            document.getElementById("result").innerHTML = "";
+            while (document.getElementById("div" + i) !== null) {
+                var str = document.getElementById("div" + i).innerHTML;
+                if (str.search(element) >= 0)
+                    document.getElementById("result").innerHTML += "Found in div" + i + "<br>";
+                i++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" name="btn1" id="btn1" onclick="searchWord()">Search</button><br><br>
+    <div id="result">
+
+    </div><br><br>
+    <div id="div1">
+        After completion of Army Basic Training Requirements, comes the Advance training that is specific to each
+        Arms and Services. For infantry, the period is around twenty-six weeks and. Here the recruit is changed into
+        a young soldier. So the emphasis is on training him to take his place during a rifle section in such a way
+        that he doesn’t become a liability, on joining his unit in actual active duty. In fact, the actual training
+        of the soldier starts once he joins his unit as Indian Army Training.
+    </div><br><br>
+    <div id="div2">
+        Born and raised in central Argentina, Messi relocated to Spain at the age of 13 to join Barcelona, for whom
+        he made his competitive debut aged 17 in October 2004. He established himself as an integral player for the
+        club within the next three years, and in his first uninterrupted season in 2008–09 he helped Barcelona
+        achieve the first treble in Spanish football; that year, aged 22, Messi won his first Ballon d'Or. Three
+        successful seasons followed, with Messi winning four consecutive Ballons d'Or, making him the first player
+        to win the award four times. During the 2011–12 season, he set the La Liga and European records for most
+        goals scored in a single season, while establishing himself as Barcelona's all-time top scorer. The
+        following two seasons, Messi finished second for the Ballon d'Or behind Cristiano Ronaldo (his perceived
+        career rival), before regaining his best form during the 2014–15 campaign, becoming the all-time top scorer
+        in La Liga and leading Barcelona to a historic second treble, after which he was awarded a fifth Ballon d'Or
+        in 2015. Messi assumed captaincy of Barcelona in 2018, and in 2019 he won a record sixth Ballon d'Or. Out of
+        contract, he signed for Paris Saint-Germain in August 2021.
+
+    </div><br><br>
+    <div id="div3">
+        Domestically, Barcelona has won a record 75 trophies: 26 La Liga, 31 Copa del Rey, thirteen Supercopa de
+        España, three Copa Eva Duarte, and two Copa de la Liga titles, as well as being the record holder for the
+        latter four competitions. In international club football, the club has won 22 European and worldwide titles:
+        five UEFA Champions League titles, a record four UEFA Cup Winners' Cups, a joint record five UEFA Super
+        Cups, a record three Inter-Cities Fairs Cups, a joint record two Latin Cups and three FIFA Club World
+        Cups.[5] Barcelona was ranked first in the International Federation of Football History & Statistics Club
+        World Ranking for 1997, 2009, 2011, 2012 and 2015, and occupies the sixth position on the UEFA club rankings
+        as of July 2022.[6][7][8] The club has a long-standing rivalry with Real Madrid, and matches between the two
+        teams are referred to as El Clásico.
+    </div><br><br>
+    <div id="div4">
+        The Army Training Command was established on 1 October 1991 at Mhow in Madhya Pradesh and moved to Shimla on 31
+        March 1993.[2] The main aim of the command is to maximize effectiveness of the training.[3]<br><br>
+        In 2019, it was decided to merge the Directorate General of Military Training (DGMT) with ARTRAC.[4] DGMT runs
+        the Rashtriya Military Schools (RMS).[5]
+    </div><br><br>
+
+</body>
+
+</html>

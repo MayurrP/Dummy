@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calAreaCircum(){
+            var rad=parseFloat(document.getElementById("rad").value);
+            var area=Math.round(Math.PI*rad*rad);
+            var circum=Math.round(2*Math.PI*rad);
+            document.getElementById("mydiv1").innerHTML="Area = "+area;
+            document.getElementById("mydiv2").innerHTML="Circumference = "+circum;
+        }
+    </script>
+</head>
+<body>
+    Enter radius : 
+    <input type="number" id="rad" name="rad">
+    <button type="button" id="btn" name="btn" onclick="calAreaCircum()">Display</button>
+    <div id="mydiv1"></div>
+    <div id="mydiv2"></div>
+</body>
+</html>

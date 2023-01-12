@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showNames() {
+            var str = "";
+            var namearr = ["John", "Steve", "Ben", "Damon", "Ion"];
+            for (var ob of namearr) {
+                str += ob.toUpperCase() + ",";
+            }
+            str=str.slice(0,str.lastIndexOf(","));
+            document.getElementById("mydiv").innerHTML=str;
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" id="btn" name="btn" onclick="showNames()">Show Names</button>
+    <h3>Members of my group are</h3>
+    <div id="mydiv"></div>
+</body>
+
+</html>
+

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var selectMonth;
+        var leapYearDate;
+
+        function fetchLeapYear(event) {
+            leapYearDate = event.target.value;
+            if (leapYearDate == 29) {
+                str3 = "<select name='byear' id='byear'>"
+                for (var i = 1950; i <= 2022; i++) {
+                    if (i % 400 == 0) {
+                        str3 += "<option value='" + i + "'>" + i + "</option>";
+                    }
+                    else if (i % 4 == 0 && i % 100 != 0) {
+                        str3 += "<option value='" + i + "'>" + i + "</option>";
+                    }
+                }
+                str3 += "</select>"
+                document.getElementById("byr").innerHTML = str3;
+                return;
+            }
+            else {
+                str3 = "<select name='byear' id='byear'>"
+                for (var i = 1950; i <= 2022; i++) {
+                    str3 += "<option value='" + i + "'>" + i + "</option>"
+                }
+                str3 += "</select>"
+                document.getElementById("byr").innerHTML = str3;
+            }
+        }
+
+        function fetchMonth(event) {
+            selectMonth = event.target.value;
+            console.log(selectMonth);
+            if ((selectMonth.localeCompare(months[1])) == 0) {
+                str = "<select name='birdate' id='birdate' onchange='fetchLeapYear(event)'>";
+                for (var i = 1; i <= 29; i++) {
+                    str += "<option value='" + i + "'>" + i + "</option>"
+                }
+                str += "</select>"
+                document.getElementById("bdt").innerHTML = str;
+                return;
+            }
+            if ((selectMonth.localeCompare(months[0]) == 0) || (selectMonth.localeCompare(months[2]) == 0)
+                || (selectMonth.localeCompare(months[4]) == 0) || (selectMonth.localeCompare(months[6]) == 0)
+                || (selectMonth.localeCompare(months[7]) == 0) || (selectMonth.localeCompare(months[9]) == 0)
+                || (selectMonth.localeCompare(months[11]) == 0)) {
+                str = "<select name='birdate' id='birdate'>";
+                for (var i = 1; i <= 31; i++) {
+                    str += "<option value='" + i + "'>" + i + "</option>"
+                }
+                str += "</select>"
+                document.getElementById("bdt").innerHTML = str;
+
+                str3 = "<select name='byear' id='byear'>"
+                for (var i = 1950; i <= 2022; i++) {
+                    str3 += "<option value='" + i + "'>" + i + "</option>"
+                }
+                str3 += "</select>"
+                document.getElementById("byr").innerHTML = str3;
+
+                return;
+            }
+            else {
+                str = "<select name='birdate' id='birdate'>";
+                for (var i = 1; i <= 30; i++) {
+                    str += "<option value='" + i + "'>" + i + "</option>"
+                }
+                str += "</select>"
+                document.getElementById("bdt").innerHTML = str;
+
+                str3 = "<select name='byear' id='byear'>"
+                for (var i = 1950; i <= 2022; i++) {
+                    str3 += "<option value='" + i + "'>" + i + "</option>"
+                }
+                str3 += "</select>"
+                document.getElementById("byr").innerHTML = str3;
+            }
+        }
+
+        function dropDownDate() {
+            var str = "";
+
+            str = "<select name='birdate' id='birdate'>";
+            for (var i = 1; i <= 31; i++) {
+                str += "<option value='" + i + "'>" + i + "</option>"
+            }
+            str += "</select>"
+            document.getElementById("bdt").innerHTML = str;
+
+            str2 = "<select name='bmonth' id='bmonth' onchange=fetchMonth(event)>";
+            for (var i = 0; i < months.length; i++) {
+                str2 += "<option value='" + months[i] + "'>" + months[i] + "</option>"
+            }
+            str2 += "</select>"
+            document.getElementById("bmth").innerHTML = str2;
+
+            str3 = "<select name='byear' id='byear'>"
+            for (var i = 1950; i <= 2022; i++) {
+                str3 += "<option value='" + i + "'>" + i + "</option>"
+            }
+            str3 += "</select>"
+            document.getElementById("byr").innerHTML = str3;
+        }
+
+        function displayData() {
+            var showstr = "";
+            var bmonth = (document.getElementById("bmonth").value).substr(0, 3);
+            var bdate = document.getElementById("birdate").value;
+            var byear = document.getElementById("byear").value;
+            var gender;
+            var genderarr = document.getElementsByName("gender");
+            var luckynum = parseInt(document.getElementById("num").value);
+            var favfoods = document.getElementsByName("foods");
+            var favfood = "";
+
+            if(isNaN(luckynum)){
+                document.getElementById("numdiv").innerHTML = "Invalid Lucky Number"
+                return;
+            }
+
+            if(luckynum>100){
+                document.getElementById("numdiv").innerHTML = "Lucky Number should be between 1-100"
+                return;
+            }
+
+            for (var ob of genderarr) {
+                if (ob.checked) {
+                    gender = ob.value;
+                }
+            }
+
+            for (var ob of favfoods) {
+                if (ob.checked) {
+                    favfood += ob.value + " ";
+                }
+            }
+
+            showstr += "You Entered:<br>Name: " + document.getElementById("name").value + "<br>Birth Date: " + bmonth + "/" + bdate + "/" + byear +
+                "<br>Email: " + document.getElementById("email").value + "<br>Gender: " + gender + "<br>Lucky Number: " + luckynum +
+                "<br>Favourite Food: " + favfood;
+
+            var newWindow = window.open();
+            newWindow.document.write(showstr);   
+        }
+    </script>
+</head>
+
+<body onload="dropDownDate()">
+    <form>
+        <table>
+            <tr>
+                <td><label>Name: </label></td>
+                <td colspan="3"><input type="text" name="name" id="name" maxlength="10" pattern=[A-Za-z]{6,10} required
+                        autofocus></td>
+            </tr>
+            <tr>
+                <td colspan="1"><label>Birth Date: </label></td>
+                <td id="bmth"></td>
+                <td id="bdt"></td>
+                <td id="byr"></td>
+            </tr>
+            <tr>
+                <td><label>Email: </label></td>
+                <td colspan="3"><input type="text" name="email" id="email" pattern=".*@.*[.com]$" required></td>
+            </tr>
+            <tr>
+                <td rowspan="2"><label>Gender: </label></td>
+                <td colspan="3"><input type="radio" name="gender" id="male" value="Male">
+                <label for="male">Male</label></td>
+            </tr>
+            <tr>
+                <td colspan="3"><input type="radio" name="gender" id="female" value="Female">
+                <label for="female">Female</label></td>
+            </tr>
+            <tr>
+                <td><label>Lucky number: </label></td>
+                <td colspan="3"><input type="text" name="num" id="num" pattern="[0-9]{1,3}" maxlength="3" required></td>
+                <td id="numdiv"></td>
+            </tr>
+            <tr>
+                <td rowspan="3"><label>Favourite Foods: </label></td>
+                <td colspan="3"><input type="checkbox" name="foods" id="Pizza" value="Pizza">Pizza</td>
+            </tr>
+            <tr>
+                <td colspan="3"><input type="checkbox" name="foods" id="Pasta" value="Pasta">Pasta</td>
+            </tr>
+            <tr>
+                <td colspan="3"><input type="checkbox" name="foods" id="Chinese" value="Chinese">Chinese</td>
+            </tr>
+            <tr>
+                <td><button type="button" name="btn" id="btn" onclick="displayData()">Submit</button></td>
+            </tr>
+
+        </table>
+
+    </form>
+    <div id="mydiv">
+
+    </div>
+
+</body>
+
+</html>

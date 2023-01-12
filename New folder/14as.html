@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var rectArray = [{ rlength: 10, rbreadth: 5 }, { rlength: 20, rbreadth: 15 }, { rlength: 40, rbreadth: 25 }];
+        var circleArray = [{ radius: 20 }, { radius: 30 }, { radius: 40 }, { radius: 50 }];
+
+        function calRecArea(rlength, rbreadth) {
+            var recArea = Number(rlength) * Number(rbreadth);
+            return recArea.toFixed(2);
+        }
+
+        function calCircleArea(radius) {
+            var circleArea = Math.PI * Math.pow(Number(radius), 2);
+            return circleArea.toFixed(2);
+        }
+
+        function calRecPerimeter(rlength, rbreadth) {
+            var recPerimeter = 2 * (Number(rlength) + Number(rbreadth));
+            return recPerimeter.toFixed(2);
+        }
+
+        function calCircleCircumference(radius) {
+            var circleCircumference = 2 * Math.PI * Number(radius);
+            return circleCircumference.toFixed(2);
+        }
+
+        function displayRectangle() {
+            var str1 = "<table class='disptable' style=' border: 2px solid black;border-collapse: collapse;'>"+
+                "<tr><th>Length</th><th>Breadth</th><th>Area</th><th>Perimeter</th></tr>";
+            for (ob of rectArray) {
+                str1 += "<tr><td>" + ob.rlength + "</td><td>" + ob.rbreadth + "</td><td>" + calRecArea(ob.rlength, ob.rbreadth)
+                    + "</td><td>" + calRecPerimeter(ob.rlength, ob.rbreadth) + "</td>" + "</tr>";
+            }
+            str1 += "</table>"
+            document.getElementById("mydiv").innerHTML = str1;
+        }
+
+        function displayCircle() {
+            var str2 = "<table class='disptable' style=' border: 2px solid black;border-collapse: collapse;'>"+
+                "<tr><th>Radius</th><th>Area</th><th>Circumference</th></tr>";
+            for (ob of circleArray) {
+                str2 += "<tr><td>" + ob.radius + "</td><td>" + calCircleArea(ob.radius) + "</td>" +
+                    "<td>" + calCircleCircumference(ob.radius) + "</td>" + "</tr>";
+            }
+            str2 += "</table>"
+            document.getElementById("mydiv").innerHTML = str2;
+        }
+        function addRectInArray() {
+            var rlength = parseFloat(document.getElementById("lth").value);
+            var rbreadth = parseFloat(document.getElementById("bdh").value);
+            if (!isNaN(rlength) && !isNaN(rbreadth)) {
+                rectArray.push({ rlength, rbreadth });
+                document.getElementById("mydiv").innerHTML = "Rectangle added succesfully";
+            }
+            else {
+                document.getElementById("mydiv").innerHTML = "Invalid Rectangle Parameters";
+            }
+        }
+
+        function addRectangle() {
+            var str3 = "<table id='addshape'><tr><td id='addshape'>Enter Length</td><td id='addshape'><input type='text' id='lth' name='lth' autofocus required></td>" +
+                "</tr><tr><td id='addshape'>Enter Breadth</td><td id='addshape'><input type='text' id='bdh' name='bdh' required></td>"
+                + "<td id='addshape'><button type='button' name='btn4' id='btn4' onclick='addRectInArray()'>Add</button></td></tr>"
+                + "</table>";
+            document.getElementById("mydiv").innerHTML = str3;
+        }
+
+        function addCircleInArray() {
+            var radius = parseFloat(document.getElementById("rad").value);
+            if (!isNaN(radius)) {
+                circleArray.push({radius});
+                document.getElementById("mydiv").innerHTML = "Circle added succesfully"
+            }
+            else {
+                document.getElementById("mydiv").innerHTML = "Invalid Circle Parameters"
+            }
+        }
+
+        function addCircle() {
+            var str4 = "<table id='addshape'><tr><td id='addshape'>Enter Radius</td><td id='addshape'><input type='text' name='rad' id='rad'></td>" +
+                "<td id='addshape'><button type='button' name='btn5' id='btn5' onclick='addCircleInArray()'>Add</button></td></tr></table>";
+            document.getElementById("mydiv").innerHTML = str4;
+        }
+
+    </script>
+    <style>
+        .disptable,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            font-size: 100%;
+            width: 50%;
+            table-layout: fixed;
+            text-align: center;
+        }
+
+        #addshape {
+            border: 0px;
+            font-size: 100%;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="btn1" name="btn1" onclick="displayRectangle()">Display Rectangle</button>
+    <button type="button" id="btn2" name="btn2" onclick="displayCircle()">Display Circle</button><br><br>
+    <button type="button" id="btn3" name="btn3" onclick="addRectangle()">Add Rectangle</button>
+    <button type="button" id="btn6" name="btn6" onclick="addCircle()">Add Circle</button><br><br>
+    <div id="mydiv">
+     
+    </div>
+</body>
+
+</html>

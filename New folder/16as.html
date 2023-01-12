@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var websitearr = ["www.google.com","www.microsoft.com","www.youtube.com","en.wikipedia.org",
+        "en.wikipedia.org","www.twitter.com","www.instagram.com","www.amazon.com","www.imdb.com",
+        "www.facebook.com","www.apple.com","www.cricbuzz.com","www.linkedin.com","www.nytimes.com",
+        "www.mayoclinic.org","www.healthline.com","www.indiatimes.com","www.bbc.co.uk","www.ikea.com",
+        "www.indeed.com","www.flipkart.com","www.espn.com","www.ebay.com","www.britannica.com",
+        "www.nih.gov","www.cnn.com","www.merriam-webster.com","www.accuweather.com","www.marca.com",
+        "www.cdc.gov","www.ilovepdf.com","www.byjus.com","www.investing.com","www.espncricinfo.com",
+        "www.ndtv.com","www.canva.com","www.indiamart.com","www.investopedia.com","www.hotstar.com"]
+
+        function displayWebsite(){
+            var element = document.getElementById("websearch").value;
+            var str="";
+            var count= Number(0);
+            var newarr = websitearr.filter(x => x.includes(element));
+            for(var ob of newarr){
+                str += ob+"<br>";
+                count++;
+            }
+            document.getElementById("mydiv").innerHTML = str;
+            document.getElementById("count").innerHTML = "Count = "+count;
+        }
+    </script>
+    <style>
+        #count{
+            position: static;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="count">
+
+    </div>
+    <label>Search</label>
+    <input type="text" name="websearch" id="websearch" onkeypress="displayWebsite()">
+    <div id="mydiv">
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function stringManip() {
+            var substr = document.getElementById("txt2").value;
+            var mainstr = document.getElementById("txt1").value;
+            var repstr = document.getElementById("txt3").value;
+            var op;
+            var str;
+            var choicearr = document.getElementsByName("choice");
+            for (var ob of choicearr) {
+                if (ob.checked) {
+                    op = ob.value;
+                }
+            }
+            switch (op) {
+                case "search":
+                    var pos = mainstr.search(substr) + 1;
+                    if (pos > 0) {
+                        document.getElementById("mydiv").innerHTML = "Substring found at position " + pos;
+                    }
+                    else
+                        document.getElementById("mydiv").innerHTML = "Substring not found";
+                    break;
+
+                case "upper":
+                    str = mainstr.toUpperCase();
+                    document.getElementById("mydiv").innerHTML = str;
+                    break;
+
+                case "lower":
+                    str = mainstr.toLowerCase();
+                    document.getElementById("mydiv").innerHTML = str;
+                    break;
+
+                case "trim":
+                    str = mainstr.trim();
+                    document.getElementById("mydiv").innerHTML = str;
+                    break;
+
+                case "concat":
+                    str = mainstr.concat(substr);
+                    document.getElementById("mydiv").innerHTML = str;
+                    break;
+
+                case "replace":
+                    str = mainstr.replace(substr, repstr);
+                    document.getElementById("mydiv").innerHTML = str;
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label>Enter String</label>
+        <input type="text" id="txt1" name="txt1"><br><br>
+        <label>Enter Substring</label>
+        <input type="text" id="txt2" name="txt2"><br><br>
+        <label>Replace with String</label>
+        <input type="text" id="txt3" name="txt3"><br><br>
+        <input type="radio" id="search" name="choice" value="search">
+        <label for="search">Search substring in main string</label>
+        <input type="radio" id="upper" name="choice" value="upper">
+        <label for="upper">To Uppercase</label>
+        <input type="radio" id="lower" name="choice" value="lower">
+        <label for="lower">To Lowercase</label>
+        <input type="radio" id="trim" name="choice" value="trim">
+        <label for="trim">Trim spaces</label>
+        <input type="radio" id="concat" name="choice" value="concat">
+        <label for="concat">Concatenate</label>
+        <input type="radio" id="replace" name="choice" value="replace">
+        <label for="replace">Replace</label>
+        <button type="button" id="btn" name="btn" onclick="stringManip()">Submit Query</button>
+        <div id="mydiv"></div>
+    </form>
+</body>
+
+</html>

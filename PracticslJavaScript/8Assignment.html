@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function funPower(){
+        var num = parseInt(document.getElementById("num").value);
+        var pow = parseInt(document.getElementById("pow").value);
+        var res = 1;
+        while (pow != 0) {
+            res = res * num;
+            pow--;
+        }
+        document.getElementById("myid").innerHTML="Result is : "+res;
+        }
+    </script>
+</head>
+<body>
+
+    <form>  
+        <h2 align="center">Find power of numbers</h2>
+        <table align="center" cellspacing="5px" cellpadding="5px">
+            <tr>
+                <td><label for="num">Enter Base Number : </label></td>
+                <td><input type="number" id="num" name="num" required autofocus></td>
+            </tr>
+            <tr>
+                <td><label for="pow">Enter Power : </label></td>
+                <td><input type="number" id="pow" name="pow" required></td>
+            </tr>
+            <tr align="centre">
+                <td colspan="2">
+                    <button type="button" id="btn" name="btn" onclick="funPower()">Power Value</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="myid" align="center"> 
+    </div>
+</body>
+</html>

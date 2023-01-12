@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calLoanPayment() {
+            var loanamt = parseFloat(document.getElementById("loanamt").value);
+            var roi = parseFloat(document.getElementById("roi").value);
+            var period = parseFloat(document.getElementById("period").value);
+            document.getElementById("mydiv").innerHTML = "";
+            document.getElementById("mthpay").value = "";
+            document.getElementById("totalpay").value = "";
+            document.getElementById("intpay").value = "";
+
+            if (!isNaN(loanamt) && !isNaN(roi) && !isNaN(period)) {
+                if ((period >= 7 && period <= 15) && loanamt <= 1500000) {
+                    var totalpay = (loanamt * ((100 + roi) / 100));
+                    var monthlypay = totalpay / (period * 12);
+                    var interestpay = totalpay - loanamt;
+
+                    document.getElementById("mthpay").value = monthlypay.toFixed(2);
+                    document.getElementById("totalpay").value = totalpay.toFixed(2);
+                    document.getElementById("intpay").value = interestpay.toFixed(2);
+                }
+                else {
+                    document.getElementById("mydiv").innerHTML = "Repayment period should be between 7-15 years<br>"
+                        + "Loan Amount should be less than 15 lakhs"
+                }
+            }
+            else {
+                document.getElementById("mydiv").innerHTML = "Invalid input details"
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <h2>Enter Loan Information</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>1) Amount of loan (any currency): </td>
+            <td><input type="text" name="loanamt" id="loanamt" autofocus required></td>
+        </tr>
+        <tr>
+            <td>2) Annual percentage rate of interest: </td>
+            <td><input type="text" name="roi" id="roi" required></td>
+        </tr>
+        <tr>
+            <td>3) Repayment period in years: </td>
+            <td><input type="number" name="period" id="period" required></td>
+        </tr>
+        <tr>
+            <td><br><br><button type="button" id="btn" name="btn" onclick="calLoanPayment()">Compute</button></td>
+        </tr>
+        <tr>
+            <td>
+                <h2>Payment Information</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>4) Your monthly payment will be: </td>
+            <td><input type="text" name="mthpay" id="mthpay" readonly></td>
+        </tr>
+        <tr>
+            <td>5) Your total payment will be: </td>
+            <td><input type="text" name="totalpay" id="totalpay" readonly></td>
+        </tr>
+        <tr>
+            <td>6) Your interest payment will be: </td>
+            <td><input type="text" name="intpay" id="intpay" readonly></td>
+        </tr>
+    </table><br><br>
+    <div id="mydiv">
+
+    </div>
+</body>
+
+</html>

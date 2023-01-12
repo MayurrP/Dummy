@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sortEmpByName(){
+            var temparray = document.getElementsByName("emp");
+            console.log(temparray);
+            var emparray = new Array();
+            for(var i=0;i<temparray.length;i++){
+                emparray[i] = temparray[i].value;
+            }
+            emparray.sort();
+            document.getElementById("mydiv").innerHTML=emparray;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><label>Enter 1st Employee Name</label></td>
+            <td><input type="text" name="emp" id="emp1" required></td>
+        </tr>
+        <tr>
+            <td><label>Enter 2st Employee Name</label></td>
+            <td><input type="text" name="emp" id="emp2" required></td>
+        </tr>
+        <tr>
+            <td><label>Enter 3rd Employee Name</label></td>
+            <td><input type="text" name="emp" id="emp3" required></td>
+        </tr>
+        <tr>
+            <td><label>Enter 4th Employee Name</label></td>
+            <td><input type="text" name="emp" id="emp4" required></td>
+        </tr>
+        <tr>
+            <td><label>Enter 5th Employee Name</label></td>
+            <td><input type="text" name="emp" id="emp5" required></td>
+        </tr>
+        <tr>
+            <td><label>Enter 6th Employee Name</label></td>
+            <td><input type="text" name="emp" id="emp6" required></td>
+        </tr>
+    </table>
+    <button type="button" id="btn" name="btn" onclick="sortEmpByName()">Sort</button>
+    <div id="mydiv">
+
+    </div>
+</body>
+</html>

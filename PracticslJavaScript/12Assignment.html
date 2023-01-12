@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[];
+        function displaysortname(arr){
+            arr.sort();
+            str ="<ul>";
+                arr.forEach(element => {
+                    str = str +"<li>"+element+"</li>"
+                });
+            str =str+"</ul>";
+            document.getElementById("para").innerHTML=str;
+        }
+        function addOn() {
+         var num = document.getElementById("num").value;
+         arr.push(num);   
+         document.getElementById("myid").innerHTML="Employees Names are : "+arr;
+         document.getElementById("num").value="";
+         displaysortname(arr);
+        }
+        
+    </script>
+
+    <form>  
+        <h2 align="center">Store Employees Name</h2>
+        <table align="center" cellspacing="5px" cellpadding="5px">
+            <tr>
+                <td><label for="num">Enter Employee Name : </label></td>
+                <td><input type="text" id="num" name="num" required autofocus></td>
+            </tr>
+            <tr align="centre">
+                <td colspan="2" align="center">
+                    <button type="button" id="btn" name="btn" onclick="addOn()">Add Name</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="myid" align="center"> 
+    </div>
+    <div id="para" align="center"></div>
+</body>
+</html>

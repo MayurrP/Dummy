@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        var emparr=[];
+        var employee = function(empid,ename,sal)
+        {
+            this.empid = empid;
+            this.ename = ename;
+            this.sal = sal;
+        }
+
+        function addDetails() {
+            var id = parseInt(document.getElementById("empid").value);
+            var ename = document.getElementById("ename").value;
+            var sal = parseFloat(document.getElementById("sal").value);
+            
+            e = new employee(id,ename,sal);
+            emparr.push(e);
+
+            str ="<table border='2px'>"
+                emparr.forEach(emp => {
+                    str = str +`<tr><td>${emp.empid}</td><td>${emp.ename}</td><td>${emp.sal}</td></tr>`
+                });
+                str = str +"</table>";
+
+                document.getElementById("para").innerHTML=str;
+                document.getElementById("empid").value="";
+                document.getElementById("ename").value="";
+                document.getElementById("sal").value="";
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table align="center">
+            <tr>
+                <td colspan="2"><h2 align="center">Employees Details</h2></td>
+            </tr>
+            <tr>
+                <td><label for="empid">Emoloyee Id : </label></td>
+                <td><input type="number" id="empid" name="empid"></td>
+            </tr>
+            <tr>
+                <td><label for="ename">Emoloyee Name : </label></td>
+                <td><input type="text" id="ename" name="ename"></td>
+            </tr>
+            <tr>
+                <td><label for="sal">Emoloyee Salary : </label></td>
+                <td><input type="number" id="sal" name="sal"></td>
+            </tr>
+            <tr align="center">
+                <td colspan="2"><button type="button" id="btn" name="btn" onclick="addDetails()">Add Details</button></td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <h3>Employees Details Are :</h2><br>
+                    <p id="para"></p></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
