@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var podarr = [{pid:1,name:"Chair",price:2000},
+                        {pid:2,name:"Table",price:3000},
+                        {pid:3,name:"Sofa",price:15000}];
+
+        function dispalyfun(){
+            str ="<select>";
+                for(var p of podarr)
+                {
+                    str+=`<option value='${p.pid}'>${p.name}</option>`
+                }
+                str +="<select>";
+        alert(str);
+        document.getElementById("myid").innerHTML=str;            
+        }
+    </script>
+</head>
+<body onload="dispalyfun()">
+    <div id="myid"></div>
+</body>
+</html>

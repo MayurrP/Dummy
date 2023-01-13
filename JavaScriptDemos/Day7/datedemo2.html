@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function showdate(){
+            var dt = new Date("2022-04-10");
+            alert(dt);
+            var dt1 = new Date(2022,1,23);
+            alert(dt1);
+            var diff = dt.getTime()-dt1.getTime();
+            var day = diff/(1000*3600*24);
+            alert(day);
+            alert(dt-dt1);
+        }
+        
+        function shownewdate(){
+            alert("blur event occur");
+            dt2 = document.getElementById("dt1").value;
+            alert(typeof(dt2));
+            var dt3 = new Date(dt2);
+            alert(dt3);
+            var d = document.getElementsByTagName("div");
+            d[0].innerHTML=" date : "+dt3;
+        }
+    </script>
+</head>
+<body onload="showdate()">
+
+    <input type="date" name="dt1" id="dt1" onblur="shownewdate()">
+
+    <div>
+    </div>
+</body>
+</html>

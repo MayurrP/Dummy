@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Name and Address</title>
+
+    <script>
+        function showInfo(){
+            var nm = document.getElementById("nm").value;
+            var addr = document.getElementById("addr").value;
+            var win = window.open("New Window");
+            win.document.write("Name : "+nm+"<br>Address : "+addr);
+            
+            document.getElementById("nm").value="";
+            document.getElementById("addr").value="";
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table align="center">
+            <tr>
+                <td><label for="nm">Name : </label></td>
+                <td><input type="text" id="nm" name="nm" autofocus required></td>
+            </tr>
+            <tr>
+                <td><label for="addr">Address : </label></td>
+                <td><input type="text" id="addr" name="addr" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" id="btn" name="btn" onclick="showInfo()">Submit</button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>

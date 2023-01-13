@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    (function(){
+        alert("Iterative Fun call ");
+    })
+
+    function display(){
+        alert("Array");
+
+        arr=[1,2,3,4,5];
+
+        function showarr() {
+            for(var num of arr) 
+            {
+                document.write(num+"<br>");
+            }          
+        }
+        showarr();
+        alert("Testing");
+        document.write("After Testing<br>");
+        showarr();
+    }
+</script>
+</head>
+<body>
+    <button type="button" name="btn" id="btn" onclick="display()">Click me</button>
+</body>
+</html>

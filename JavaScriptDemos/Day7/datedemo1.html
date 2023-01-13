@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showdate(){
+            var dt = new Date();
+            var day = dt.getDay();
+            var date = dt.getDate();
+            var month = dt.getMonth()+1;
+            var year = dt.getFullYear();
+            var yr = dt.getUTCFullYear();
+            var d=document.getElementsByTagName("div");
+            d[0].innerHTML="Day : "+day+" Year (yr) : "+yr+"<br><br>"+
+            "Date : "+date+" Month : "+month+" Year : "+year+"<br>";
+        }
+    </script>
+</head>
+<body onload="showdate()">
+    <div>
+    </div>
+</body>
+</html>

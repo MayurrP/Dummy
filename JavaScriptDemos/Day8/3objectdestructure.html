@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        ob={id:1,name:"svdsvv",desg:"designer"};
+        ob2 = {...ob,hobbies:["a","b","c"]};
+     
+//         id = ob.id;
+//        name = ob.name;
+//        desg = ob.desg;
+
+//        let {id:id,name:name,desg:desg}=ob;
+
+        let {id,name,desg,dept="hr"}=ob;
+        document.write(`Id : ${id} name: ${name} desg: ${desg} dept : ${dept}`)
+
+        ob1={id:12,name:"Revati",desg:"designer",dept:{dno:12,dname:"admin"}};
+        let {dept : {
+                dno,dname}
+            }=ob1
+                document.write(`Dept_No : ${dno} Dept_name : ${dname}`);
+       
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //------------ 1st type of object declaration ----------
+        var ob={id:1,name:"mayur",desg:"Student",display:function(){
+            document.write(`Id : ${this.id} Name : ${this.name} Designation : ${this.desg}`)
+        }};
+        alert(ob.id+"-----"+ob.name+"------"+ob.desg);
+        console.log(ob);
+        ob.display();
+
+        //------------ 2nd type of object declaration () ----------
+        var person = function(id,name,mob)
+        {
+            this.id = id;
+            this.name = name;
+            this.mob = mob;
+        }
+
+        var employee=function(dept,desg){
+            this.dept = dept;
+            this.desg = desg;
+        }
+
+        p = new person(2,"xyz","3223332");
+       alert(p.id+"   "+p.name+"    "+p.mob);
+
+        q=new employee("HR","manager");
+        q.sal=3333;
+        q2=new employee("admin","sr. mgr");
+        
+        q.__proto__=p;
+        for(var prop in q)
+        {
+            if(q.hasOwnProperty(prop)){
+                document.write("<br><br> has own property "+prop+"---->"+q[prop]);
+            }
+            else{
+                document.write("<br><br> is parent property "+prop+"---->"+q[prop]);
+            }
+                
+        }
+        
+        ob1=Object.create(null);
+        ob1.location="Pune";
+        ob1.name="xxxx";
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

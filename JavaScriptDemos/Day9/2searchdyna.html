@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var prodarr=[{pid:1,pname:"Chair",price:2345},
+        {pid:2,pname:"Table",price:5345},
+        {pid:3,pname:"Sofa",price:60000},
+        {pid:1,pname:"Chair",price:2345},
+        {pid:10,pname:"Chair1111",price:2345},
+        {pid:12,pname:"Chair111222",price:4567}];
+
+        function displaytable(arr = prodarr){
+            str = "<table border='2'><th>Product Id</th><th>Product Name</th><th>Product Price</th>";
+            for(var ob of arr){
+                str= str +"<tr><td>"+ob.pid+"</td><td>"+ob.pname+"</td><td>"+ob.price+"</td></tr>";
+            }
+            str = str +"</table>";
+            document.getElementById("mydiv").innerHTML=str;
+        }
+
+        function showbyprice(){
+            var pr = document.getElementById("price").value;
+            var newarr = prodarr.filter(x=>x.price >= pr);
+            displaytable(newarr);
+        }
+
+        function showmydatabyPrice(event){
+            console.log(event.key+" --------> "+event.which);
+            if (event.which == 13) {
+                showbyprice();
+            }
+        }
+
+        function showbyname(){
+            var nam = document.getElementById("pnm").value;
+            console.log(event.target.value);
+            var namarr = prodarr.filter(x=>x.pname.includes(nam));
+            displaytable(namarr);
+        }
+
+        function showmydatabyName(event){
+            console.log(event.key+" --------> "+event.which);
+                showbyname();
+        }
+    </script>
+</head>
+<body align="center">
+    <label for="pnm">Search By Product Name : </label>
+    <input type="text" name="pnm" id="pnm" onkeypress="showmydatabyName(event)"><br><br>
+    <button type="button" id="btnname" name="btnname" onclick="showbyname()">Show By Name</button>
+    <br><br>
+    <label for="price">Search By Price : </label>
+    <input type="number" name="price" id="price" onkeypress="showmydatabyPrice(event)"><br><br>
+    <button type="button" id="btnprice" name="btnprice" onclick="showbyprice()">Show By Price</button>
+    <br><br>
+    <button type="button" id="btn1" name="btn1" onclick="displaytable()">ShowProducts</button>
+    <br><br>
+    <div id="mydiv" align="center"></div>
+</body>
+</html>

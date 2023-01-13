@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calci</title>
+   
+    <script>
+        var res;
+        function calculate(event)
+        {
+           // alert("calculator");
+            var n1 = parseInt(document.getElementById("num1").value);   
+            var n2 = parseInt(document.getElementById("num2").value);
+            var arr = document.getElementsByName("operation");
+            for (var i = 0; i < arr.length; i++) {
+                if(arr[i].checked){
+                    var op = arr[i].value;
+                }
+            }
+            switch (op) {
+                case "+":
+                    res = document.getElementById("para").innerHTML = "Addition is "+(n1+n2);
+                    break;
+                case "-":
+                    res = document.getElementById("para").innerHTML = "Subtraction is "+(n1-n2);
+                    break;
+                case "/":
+                    res = document.getElementById("para").innerHTML = "Division is "+(n1/n2);
+                    break;
+                case "*":
+                    res = document.getElementById("para").innerHTML = "Multiplication is "+(n1*n2);
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+<form>
+    <table>
+        <tr>
+            <td><label for="num1">Num1 : </label></td>
+            <td><input type="number" id="num1" name="num1" autofocus required></td>
+        </tr>
+        <tr>
+            <td><label for="num2">Num2 : </label></td>
+            <td><input type="number" id="num2" name="num2" required></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <input type="radio" name="operation" id="btn" value="+"><label for="btn">addition</label></button>
+            <input type="radio" name="operation" id="btn1" value="-"><label for="btn1">subtraction</label></button>
+            <input type="radio" name="operation" id="btn2" value="/"><label for="btn2">division</label></button>
+            <input type="radio" name="operation" id="btn3" value="*"><label for="btn3">multiplication</label></button>
+        </tr> 
+        <tr>
+            <td colspan="2" align="center">
+                <button type="button" name="btn" id="btn4" onclick="calculate()">calculate</button></td>
+            </td>
+        </tr>
+            <tr>
+            <td colspan="2" align="center">
+            <p id="para"> Result : </p>   
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

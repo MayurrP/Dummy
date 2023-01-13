@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function createTable(){
+        var nm = parseInt(document.getElementById("num").value);  
+        var res;
+        for (let i = 1; i <= 10; i++) {
+                res = nm * i;
+                document.getElementById("myid").innerHTML+=nm+" * "+i+" = "+res+"<br>";
+        }
+        document.getElementById("num").value="";
+        document.getElementById("num").focus();
+        }
+    </script>
+
+    <form>
+        <table align="center">
+            <tr>
+                <td><label for="num">Enter number : </label></td>
+                <td><input type="number" id="num" name="num" required autofocus></td>
+            </tr>
+            <tr align="centre">
+                <td colspan="2">
+                    <button type="button" id="btn" name="btn" onclick="createTable()">Dispaly Table</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="myid"> 
+
+    </div>
+</body>
+</html>

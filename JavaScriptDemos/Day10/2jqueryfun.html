@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p,div").each(function(index,element){
+                alert(index+" -------> "+$(element).html())
+            });
+
+            $('#btn').click(function(){
+                var nm=$('input[type="text"]').val();
+                alert("name : "+ nm)
+             })
+        })
+    </script>
+</head>
+<body>
+    <label for="nm">Name : </label>
+    <input type="text" id="nm" name="nm"><br><br>
+    <button id="btn" name="btn">Show Value</button> 
+    <div>This is div</div>
+    <div>This is div</div>
+    <div>This is div</div>
+    <h1>This is h1</h1>
+    <p>This ia para</p>
+    <p>This is para</p>
+    <p id="pid"></p>
+</body>
+</html>

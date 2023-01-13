@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myclass{
+            background-color:aqua;
+        }
+        .myc{
+            background-color: red;
+        }
+    </style>
+    <script>
+
+       var arr = [];
+
+        function display(){ 
+            str ='';
+            for(var a of arr){
+                str =str+ a.nm+"  "+a.add+"  "+a.hob+"<br>";
+            }
+            document.getElementById("mydiv").innerHTML = str;
+            document.getElementById("bid").classList.remove("myclass");
+            document.getElementById("bid").classList.add("myc");            
+        }       
+    function validatenm(){
+        let name = document.getElementById("nm").value;
+        var len = name.length;
+        alert(len);
+        if(len > 6){
+            alert("Name should be less than 6 characters.");
+            document.getElementById("myfrm").reset();
+        }
+        else{
+            addobj();
+        }
+    }
+
+       function addobj(){
+            nm = document.getElementById("nm").value;
+            add = document.getElementById("add").value;
+            hob = document.getElementById("hob").value;
+            d = {nm,add,hob};
+            arr.push(d);
+            document.getElementById("myfrm").reset();
+            document.getElementById("bid").classList.remove("myc");
+            document.getElementById("bid").classList.add("myclass");
+       }
+
+       function colorChange(event){
+        event.target.setAttribute("style", "background-color: yellow")
+    }
+
+    function resetColor(event){
+        event.target.setAttribute("style", "background-color: white")
+    }
+    </script>
+</head>
+<body id="bid" class="myclass">
+    <form id="myfrm">
+        <table>
+            <tr>
+                <td><label for="nm">Name : </label></td>
+                <td><input type="text" id="nm" name="nm" required 
+                    onfocus="colorChange(event)" 
+                    onblur="resetColor(event)"></td>
+            </tr>
+            <tr>
+                <td><label for="add">Address : </label></td>
+                <td><input type="text" id="add" name="add" required ></td>
+            </tr>
+            <tr>
+                <td><label for="hob">Hobbie : </label></td>
+                <td><input type="text" id="hob" name="hob" required ></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" id="btnadd" name="btnadd" onclick="validatenm()">Add Object</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" id="btndis" name="btndis" onclick="display()">Display Object</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="mydiv"></div>
+</body>
+</html>

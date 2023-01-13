@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+            var n1 = parseInt($("#num1").val());
+            var n2 = parseInt($("#num2").val());
+            var res = n1 + n2;
+            $('#result').val(res);
+            $("#myid").html("Addition is : "+res)
+        })
+
+        })
+    </script>
+</head>
+<body>
+    <form>
+        <table align="center">
+            <tr>
+                <td><label for="num1">Number1 : </label></td>
+                <td><input type="number" id="num1" name="num1" required autofocus></td>
+            </tr>
+            <tr>
+                <td><label for="num2">Number2 : </label></td>
+                <td><input type="number" id="num2" name="num2" required></td>
+            </tr>
+            <tr align="center">
+                <td colspan="2"><button type="button" id="btn" name="btn">Addition</button></td>
+            </tr>
+            <tr>
+                <td><label for="result">Result : </label></td>
+                <td><input type="number" id="result" name="result" required></td>
+            </tr>
+            
+            <tr align="center">
+                <td colspan="2"><p id="myid" ></p></td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

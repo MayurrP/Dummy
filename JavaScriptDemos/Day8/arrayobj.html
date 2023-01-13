@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Object</title>
+
+    <style>
+        .myclass{
+            display:none;
+        }
+
+        .myc{
+            display:block;
+        }
+    </style>
+
+    <script>
+        var podarr = [{pid:1,pname:"Chair",price:2000},
+                        {pid:2,pname:"Table",price:3000},
+                        {pid:3,pname:"Sofa",price:15000}];
+
+        function datadisplay(){
+            str ="<table border='2'><tr><th>Product Id</th><th>Product Name</th><th>Product Price</th></tr>";
+                for(var p of podarr)
+                {
+                    str+=`<tr><td>${p.pid}</td><td>${p.pname}</td><td>${p.price}</td>`
+                    str+=`<td><button type="button" name="btn1" id="del" onclick="deleteproduct(${ob.pid})">delete</button></td></tr>`
+                }
+                alert(str);
+                str+="</table>";
+        document.getElementById("mydiv").innerHTML=str;            
+        }
+
+        function deleteproduct(id){
+            var pos = podarr.findIndex(x=>x.pid == id);
+            podarr.splice(pos,1);
+            datadisplay();
+        }
+
+        function dispalyform(){
+            document.getElementById("mydiv1").classList.remove("myclass");
+            document.getElementById("mydiv1").classList.add("myc");
+        }
+
+        function addproduct(){
+
+            pid=document.getElementById("pid").value;
+            pname=document.getElementById("pname").value;
+            price=document.getElementById("price").value;
+            
+            
+            ob={pid:pid,panme:pname,price:price}
+
+            podarr.push(ob);
+            
+            document.getElementById("myfrm").reset();
+
+            document.getElementById("mydiv1").classList.remove("myc");
+           document.getElementById("mydiv1").classList.add("myclass");
+
+           datadisplay();
+        }
+
+    </script>
+</head>
+<body onload="datadisplay()">
+    <button type="button" id="btnprod" name="btnprod" onclick="dispalyform()">Add Product</button>
+    <div id="mydiv1" class="myclass">
+    <form id="myfrm">
+        <table>
+             <tr>
+                <td><label for="pid">Product Id : </label></td>
+                <td><input type="number" id="pid" name="pid"></td>
+            </tr>
+            <tr>
+                <td><label for="pname">Product Name : </label></td>
+                <td><input type="text" id="pname" name="pname"></td>
+            </tr>
+            <tr>
+                <td><label for="price">Product Price : </label></td>
+                <td><input type="number" id="price" name="price"></td>
+            </tr>
+            <td colspan="2" align="center">
+                <button type="button" id="btndata" name="btndata" onclick="addproduct()">Add Data</button>
+            </td>
+        </table>
+    </form>
+    </div>
+    <div id="mydiv"></div>
+</body>
+</html>

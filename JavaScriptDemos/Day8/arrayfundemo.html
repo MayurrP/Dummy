@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+       arr = [1,23,11,34,54,24,6,36];
+
+       ans = arr.map((value,index)=>value*value+index);
+       document.write("After Mapping : "+ans+"<br><br>");
+
+        //sum of all elements.
+        sum = arr.reduce((acc,num)=>acc+num);
+        document.write("Sum is : "+sum+"<br><br>");
+
+        //find maximum value from the array
+        max = arr.reduce((acc,num)=> acc>num?acc:num);
+        document.write("Max value is : "+max+"<br><br>");
+
+        max1 = arr.reduce((acc,num)=>{if(acc < num) return num;else return acc});
+        document.write("Max value is : "+max1+"<br><br>");
+        arr2=["Python","Perl","OS","Datastructure"]
+        //concatenate all stings
+        code = arr2.reduce((acc,str)=>acc+str);    
+        document.write("String after concatenation : "+code+"<br><br>");
+
+        //display code for every course which is first 3 characters of the course name
+        code1 = arr2.map((value)=>value.substr(0,3));    
+        document.write("New String : "+code1+"<br><br>");
+
+        //concatenate first 2 characters of every string and convert it into a string
+        str = arr2.reduce((acc,str)=>acc+str.substr(0,2),"");
+        document.write("New String : "+str+"<br><br>");
+
+        //vim
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

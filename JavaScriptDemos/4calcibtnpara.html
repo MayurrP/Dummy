@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calci</title>
+   
+    <script>
+        var res;
+        function calculate(event)
+        {
+            alert("calculator");
+            var n1 = parseInt(document.getElementById("num1").value);   
+            var n2 = parseInt(document.getElementById("num2").value);
+            switch (event.target.id) {
+                case "add":
+                    res = document.getElementById("para").innerHTML = "Addition is "+(n1+n2);
+                    break;
+                case "sub":
+                    res = document.getElementById("para").innerHTML = "Subtraction is "+(n1-n2);
+                    break;
+                case "div":
+                    res = document.getElementById("para").innerHTML = "Division is "+(n1/n2);
+                    break;
+                case "mul":
+                    res = document.getElementById("para").innerHTML = "Multiplication is "+(n1*n2);
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+<form>
+    <table>
+        <tr>
+            <td><label for="num1">Num1 : </label></td>
+            <td><input type="number" id="num1" name="num1" autofocus required></td>
+        </tr>
+        <tr>
+            <td><label for="num2">Num2 : </label></td>
+            <td><input type="number" id="num2" name="num2" autofocus required></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="button" name="btn" id="add" value="+" onclick="calculate(event)" >addition</button>
+                <button type="button" name="btn" id="sub" value="-" onclick="calculate(event)">subtraction</button>
+                <button type="button" name="btn" id="div" value="/" onclick="calculate(event)">division</button>
+                <button type="button" name="btn" id="mul" value="*" onclick="calculate(event)">multiplication</button>
+            </td>
+        </tr> 
+            <tr>
+            <td colspan="2" align="center">
+            <p id="para"></p>   
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
